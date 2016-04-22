@@ -20,8 +20,8 @@ of configurations we will set as we get started with Git:
 *   what our preferred text editor is,
 *   and that we want to use these settings globally (i.e. for every project)
 
-On a command line, Git commands are written as `git verb`, 
-where `verb` is what we actually want to do. So here is how 
+On a command line, Git commands are written as `git verb`,
+where `verb` is what we actually want to do. So here is how
 Dracula sets up his new laptop:
 
 ~~~ {.bash}
@@ -36,12 +36,13 @@ He also has to set his favorite text editor, following this table:
 
 | Editor             | Configuration command                            |
 |:-------------------|:-------------------------------------------------|
-| nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
-| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
+| Notepad (Win)      | `$ git config --global core.editor "notepad"`    |
 | Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
+| nano               | `$ git config --global core.editor "nano -w"`    |
+| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
+| Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
 | emacs              | `$ git config --global core.editor "emacs"`   |
