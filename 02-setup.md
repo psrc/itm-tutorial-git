@@ -27,7 +27,6 @@ Dracula sets up his new laptop:
 ~~~ {.bash}
 $ git config --global user.name "Vlad Dracula"
 $ git config --global user.email "vlad@tran.sylvan.ia"
-$ git config --global color.ui "auto"
 ~~~
 
 (Please use your own name and email address instead of Dracula's.)
@@ -41,14 +40,14 @@ He also has to set his favorite text editor, following this table:
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
 | Notepad++ (Win)    | `$ git config --global core.editor "'c:/program files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
-| Text Wrangler      | `$ git config --global core.editor "edit -w"`    |
+| Text Wrangler (Mac)     | `$ git config --global core.editor "edit -w"`    |
 | Sublime Text (Mac) | `$ git config --global core.editor "subl -n -w"` |
 | Kate (Linux)       | `$ git config --global core.editor "kate"`       |
 | Gedit (Linux)      | `$ git config --global core.editor "gedit -s -w"`   |
 | emacs              | `$ git config --global core.editor "emacs"`   |
 | vim                | `$ git config --global core.editor "vim"`   |
 
-The four commands we just ran above only need to be run once: the flag `--global` tells Git
+The commands we just ran above only need to be run once: the flag `--global` tells Git
 to use the settings for every project, in your user account, on this computer.
 
 You can check your settings at any time:
