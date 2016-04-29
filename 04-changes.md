@@ -5,21 +5,23 @@ subtitle: Tracking Changes
 minutes: 20
 ---
 > ## Learning Objectives {.objectives}
-> 
+>
 > *   Go through the modify-add-commit cycle for a single file.
 > *   Explain where information is stored at each stage of Git commit workflow.
 
-Let's create a file called `mars.txt` that contains some notes
-about the Red Planet's suitability as a base.
-(We'll use `nano` to edit the file;
-you can use whatever editor you like.
+Git is all about composing and saving snapshots of your project and then working with and comparing those snapshots. This section will explain the commands needed to compose and commit snapshots of your project.
+
+An important concept here is that Git has an 'index', which acts as sort of a staging area for your snapshot. This allows you to build up a series of well-composed snapshots from changed files in your working directory, rather than having to commit all of the file changes at once.
+
+Let's see how this works. In your `planets` folder, create a new file called `mars.txt` that contains some notes about the Red Planet's suitability as a base.
+(We'll use `nano` to edit the file; you can use whatever editor you like.
 In particular, this does not have to be the `core.editor` you set globally earlier.)
 
 ~~~ {.bash}
 $ nano mars.txt
 ~~~
 
-Type the text below into the `mars.txt` file:
+Type the text below into the `mars.txt` file and save it:
 
 ~~~ {.output}
 Cold and dry, but everything is my favorite color
@@ -29,14 +31,9 @@ Cold and dry, but everything is my favorite color
 
 ~~~ {.bash}
 $ ls
-~~~
-~~~ {.output}
 mars.txt
-~~~
-~~~ {.bash}
+
 $ cat mars.txt
-~~~
-~~~ {.output}
 Cold and dry, but everything is my favorite color
 ~~~
 
@@ -59,8 +56,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 ~~~
 
 The "untracked files" message means that there's a file in the directory
-that Git isn't keeping track of.
-We can tell Git to track a file using `git add`:
+that Git isn't keeping track of. We can tell Git to add the new changes in that file using `git add`:
 
 ~~~ {.bash}
 $ git add mars.txt
@@ -89,7 +85,7 @@ To get it to do that,
 we need to run one more command:
 
 ~~~ {.bash}
-$ git commit -m "Start notes on Mars as a base"
+$ git commit -m "Start notes on using Mars as a base"
 ~~~
 ~~~ {.output}
 [master (root-commit) f22b25e] Start notes on Mars as a base
@@ -157,7 +153,7 @@ and the log message Git was given when the commit was created.
 > so that our filesystem doesn't become cluttered
 > (and so that we can't accidentally edit or delete an old version).
 
-Now suppose Dracula adds more information to the file.
+Now suppose we add more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
 you may use a different editor, and don't need to `cat`.)
 
@@ -192,42 +188,8 @@ The last line is the key phrase:
 We have changed this file,
 but we haven't told Git we will want to save those changes
 (which we do with `git add`)
-nor have we saved them (which we do with `git commit`).
-So let's do that now. It is good practice to always review
-our changes before saving them. We do this using `git diff`.
-This shows us the differences between the current state
-of the file and the most recently saved version:
-
-~~~ {.bash}
-$ git diff
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index df0654a..315bf3a 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1 +1,2 @@
- Cold and dry, but everything is my favorite color
-+The two moons may be a problem for Wolfman
-~~~
-
-The output is cryptic because
-it is actually a series of commands for tools like editors and `patch`
-telling them how to reconstruct one file given the other.
-If we break it down into pieces:
-
-1.  The first line tells us that Git is producing output similar to the Unix `diff` command
-    comparing the old and new versions of the file.
-2.  The second line tells exactly which versions of the file
-    Git is comparing;
-    `df0654a` and `315bf3a` are unique computer-generated labels for those versions.
-3.  The third and fourth lines once again show the name of the file being changed.
-4.  The remaining lines are the most interesting, they show us the actual differences
-    and the lines on which they occur.
-    In particular,
-    the `+` markers in the first column show where we have added lines.
-
-After reviewing our change, it's time to commit it:
+nor have we saved the snapshot (which we do with `git commit`).
+So let's do that now.
 
 ~~~ {.bash}
 $ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
@@ -245,8 +207,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ~~~
 
 Whoops:
-Git won't commit because we didn't use `git add` first.
-Let's fix that:
+Git won't commit because we didn't use `git add` first. Even if the file is already "tracked" - ie, it was in your last commit - you still need to call `git add` to add new modifications to your staging area.
+
+So let's fix that:
 
 ~~~ {.bash}
 $ git add mars.txt
@@ -268,7 +231,8 @@ and the corresponding addition to the bibliography,
 but *not* commit the work we're doing on the conclusion
 (which we haven't finished yet).
 
-To allow for this,
+#### Staging Area
+
 Git has a special *staging area*
 where it keeps track of things that have been added to
 the current [change set](reference.html#change-set)
@@ -284,22 +248,18 @@ but not yet committed.
 > If you don't have anything staged when you type `git commit`,
 > Git will prompt you to use `git commit -a` or `git commit --all`,
 > which is kind of like gathering *everyone* for the picture!
-> However, it's almost always better to
+>
+> It's almost always better to
 > explicitly add things to the staging area, because you might
-> commit changes you forgot you made. (Going back to snapshots,
-> you might get the extra with incomplete makeup walking on
-> the stage for the snapshot because you used `-a`!)
-> Try to stage things manually,
-> or you might find yourself searching for "git undo commit" more
+> commit changes you forgot you made. Try to stage things manually,
+> or you might find yourself googling for "git undo commit" more
 > than you would like!
 
 ![The Git Staging Area](fig/git-staging-area.svg)
 
 Let's watch as our changes to a file move from our editor
-to the staging area
-and into long-term storage.
-First,
-we'll add another line to the file:
+to the staging area and into long-term storage.
+First, we'll add another line to the file:
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -310,6 +270,9 @@ Cold and dry, but everything is my favorite color
 The two moons may be a problem for Wolfman
 But the Mummy will appreciate the lack of humidity
 ~~~
+
+Now let's use the command `git diff` to see a line-by-line breakdown of the changes that Git sees in the file.  Where `git status` will show you what files have changed and/or been staged since your last snapshot, `git diff` will show you what those changes actually are, line by line. It's a good follow-up command to `git status`.
+
 ~~~ {.bash}
 $ git diff
 ~~~
@@ -324,9 +287,9 @@ index 315bf3a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-So far, so good:
-we've added one line to the end of the file
-(shown with a `+` in the first column).
+So far, so good: we've added one line to the end of the file
+(shown with a `+` in the first column, and probably in green in your terminal).
+
 Now let's put that change in the staging area
 and see what `git diff` reports:
 
@@ -335,31 +298,11 @@ $ git add mars.txt
 $ git diff
 ~~~
 
-There is no output:
-as far as Git can tell,
+There is no output: as far as Git can tell,
 there's no difference between what it's been asked to save permanently
-and what's currently in the directory.
-However,
-if we do this:
+and what's currently in the directory. That makes sense, because the version we've staged is the same as the version in our working directory. If we edited the file again after this, any additional changes would again show up in the `git diff`.
 
-~~~ {.bash}
-$ git diff --staged
-~~~
-~~~ {.output}
-diff --git a/mars.txt b/mars.txt
-index 315bf3a..b36abfd 100644
---- a/mars.txt
-+++ b/mars.txt
-@@ -1,2 +1,3 @@
- Cold and dry, but everything is my favorite color
- The two moons may be a problem for Wolfman
-+But the Mummy will appreciate the lack of humidity
-~~~
-
-it shows us the difference between
-the last committed change
-and what's in the staging area.
-Let's save our changes:
+OK, let's save our snapshot:
 
 ~~~ {.bash}
 $ git commit -m "Discuss concerns about Mars' climate for Mummy"
@@ -413,16 +356,16 @@ repository (`git commit`):
 
 > ## Choosing a commit message {.challenge}
 >
-> Which of the following commit messages would be most appropriate for the 
+> Which of the following commit messages would be most appropriate for the
 > last commit made to `mars.txt`?
-> 
-> 1. 
+>
+> 1.
 >
 >     "Changes"
-> 2. 
+> 2.
 >
 >     "Added line 'But the Mummy will appreciate the lack of humidity' to mars.txt"
-> 3. 
+> 3.
 >
 >     "Discuss effects of Mars' climate on the Mummy"
 
@@ -430,24 +373,24 @@ repository (`git commit`):
 >
 > Which command(s) below would save the changes of `myfile.txt` to my local Git repository?
 >
-> 1. 
+> 1.
 >
 >     ~~~
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 2. 
+> 2.
 >
 >     ~~~
 >     $ git init myfile.txt
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 3. 
+> 3.
 >
 >     ~~~
 >     $ git add myfile.txt
 >     $ git commit -m "my recent changes"
 >     ~~~
-> 4. 
+> 4.
 >
 >     ~~~
 >     $ git commit -m myfile.txt "my recent changes"
@@ -461,26 +404,5 @@ repository (`git commit`):
 > then modify one line, add a fourth line, and display the differences
 > between its updated state and its original state.
 
-> ## Author and Committer {.challenge}
->
-> For each of the commits you have done, Git stored your name twice.
-> You are named as the author and as the committer. You can observe
-> that by telling Git to show you more information about your last
-> commits:
->
-> ~~~
-> $ git log --format=full
-> ~~~
->
-> When commiting you can name someone else as the author:
->
-> ~~~
-> $ git commit --author="Vlad Dracula <vlad@tran.sylvan.ia>"
-> ~~~
->
-> Create a new repository and create two commits: one without the
-> `--author` option and one by naming a colleague of yours as the
-> author. Run `git log` and `git log --format=full`. Think about ways
-> how that can allow you to collaborate with your colleagues.
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
