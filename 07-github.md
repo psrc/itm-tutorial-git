@@ -23,6 +23,9 @@ Most programmers use hosting services like
 to hold those master copies;
 we'll explore the pros and cons of this in the final section of this lesson.
 
+There are lots of different ways to use GitHub to share and collaborate on code. We will go through three typical examples.
+
+
 > ## What is GitHub, and how is it different from Git itself? {.callout}
 >
 > **Git** is a system for storing and managing snapshots of your files. It runs locally on your computer, and has both command-line and GUI tools that help you to use it. Once you've installed Git on your computer, you can use it to manage any files want. Everything can stay local on your computer, so you don't need to worry about whether your stuff is public, open-source, private, sensitive -- it doesn't matter. Git is just a way to help you manage your files. You can use Git to share files with others, too, but only if you want to use it that way.
@@ -33,7 +36,7 @@ we'll explore the pros and cons of this in the final section of this lesson.
 >
 >There are many other websites which offer similar services, such as [bitbucket](http://bitbucket.org) and [gitlab](http://www.gitlab.com).
 
-### Using GitHub
+### 1. Sharing your own code on GitHub
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,

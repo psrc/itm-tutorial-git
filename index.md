@@ -60,11 +60,13 @@ to be shared can and should be stored in a version control system.
 3.  [Creating a Repository](03-create.html)
 4.  [Tracking Changes](04-changes.html)
 5.  [Ignoring Things](05-ignore.html)
-7.  [GitHub](07-github.html)
-8.  [Collaborating](08-collab.html)
-9.  [Conflicts](09-conflict.html)
-
-21.  [Exploring History](21-history.html)
+6.  [Sharing via GitHub](07-github.html)
+7.  [Working Together](08-collab.html)
+7.  [GitHub Workflow: Forks and Pull Requests](09-fork.html)
+8.  [Conflicts](10-conflict.html)
+9.  [Project Management with GitHub](10-github-management.html)
+21. [Appendix A - Exploring History](21-history.html)
+22. [Appendix B - Branching and Merging](22-branches.html)
 
 ## Other Resources
 

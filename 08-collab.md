@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Version Control with Git
-subtitle: Collaborating
+subtitle: 2. Collaborating using GitHub
 minutes: 25
 ---
 > ## Learning Objectives {.objectives}
-> *   Clone a remote repository.
+> *  Clone a remote repository.
 > *  Collaborate pushing to a common repository.
 
 For the next step, get into pairs.
@@ -18,9 +18,10 @@ One person will be the "Owner" (this is the person whose Github repository will 
 > This window will represent your partner, working on another computer. You
 > won't need to give anyone access on GitHub, because both 'partners' are you.
 
-The Owner needs to give the Collaborator access.
-On GitHub, click the settings button on the right,
-then select Collaborators, and enter your partner's username.
+GitHub defaults to allowing repositories to be visible to anyone, but only the repo owner can write to them. This makes sense; you don't want the entire Internet modifying your work!
+
+To collaborate with a partner or colleague, the repository owner needs to give the Collaborator write access to the repository, or the collaborator won't be able to save any changes. On GitHub, click the settings button on the right,
+then select Collaborators, and enter your partner's GitHub username.  Find a way to let them know you're ready to go -- email them with the URL of the github repo, or just turn to them if they're sitting next to you. =)
 
 ![Adding collaborators on GitHub](fig/github-add-collaborators.png)
 
@@ -101,15 +102,15 @@ Fast-forward
 > ## Review changes {.challenge}
 >
 > The Owner push commits to the repository without giving any information
-> to the Collaborator. How can the Collaborator find out what has changed with 
-> command line? And on GitHub? 
-> 
+> to the Collaborator. How can the Collaborator find out what has changed with
+> command line? And on GitHub?
+>
 > ## Comment changes in GitHub {.challenge}
 >
 > The Collaborator has some questions about one line change made by the Owner and
-> has some suggestions to propose. 
-> 
-> With GitHub, it is possible to comment the diff of a commit. Over the line of 
-> code to comment, a blue comment icon appears to open a comment window. 
-> 
+> has some suggestions to propose.
+>
+> With GitHub, it is possible to comment the diff of a commit. Over the line of
+> code to comment, a blue comment icon appears to open a comment window.
+>
 > The Collaborator posts its comments and suggestions using GitHub interface.
