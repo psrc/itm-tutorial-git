@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="pandoc">
+    <title>Software Carpentry: Version Control with Git</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="css/swc.css" />
+    <link rel="alternate" type="application/rss+xml" title="Software Carpentry Blog" href="http://software-carpentry.org/feed.xml"/>
+    <meta charset="UTF-8" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="lesson">
+    <div class="container card">
+      <div class="banner">
+        <a href="http://software-carpentry.org" title="Software Carpentry">
+          <img alt="PSRC banner" src="http://psrc.github.io/itm-tutorial-2016/css/psrc-logo-new.png" />
+        </a>
+      </div>
+      <article>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+                    <a href="index.html"><h1 class="title">Version Control with Git</h1></a>
+          <h2 class="subtitle">GitHub Workflow - Forks and Pull Requests</h2>
+          <section class="objectives panel panel-warning">
+<div class="panel-heading">
+<h2 id="learning-objectives"><span class="glyphicon glyphicon-certificate"></span>Learning Objectives</h2>
+</div>
+<div class="panel-body">
+<ul>
+<li>Understand the GitHub-specific concept of a personal fork</li>
+<li>Understand the GitHub-specific concept of a Pull Request</li>
+<li>Collaborate using GitHub fork/pull workflow</li>
+</ul>
+</div>
+</section>
+<p>Git allows massive distribution of code. This is often a new idea for people used to tight ownership of closed-source software code, but in 2016 it is more and more prevalent in scientific research to do things in an open manner.</p>
+<p>There will be many cases where you are not going to get write access to a repository on GitHub:</p>
+<ul>
+<li>The repo is owned by an agency or team that you’re not a part of</li>
+<li>The repo is for a big public project with many many contributors who may or may not even know each other</li>
+<li>You’re just “lurking” — exploring someone else’s project or code for your own reasons</li>
+</ul>
+<h4 id="forking-code">Forking Code</h4>
+<p>GitHub has come up with an ingenious add-on to the Git workflow model, known as personal forks. A “fork” is just a copy of someone else’s repository on GitHub, that belongs to you. At the moment you fork a repository, your fork is an exact replica of the other project, with one important difference: you have write-access to it. The original owner doesn’t need to give you permission to do so, and you can modify that code any way you see fit because your changes stay local to your fork.</p>
+<p>If you can see someone’s repository on GitHub, you can fork it.</p>
+<p>Let’s fork some code!</p>
+<p>1 Go to https://github.com/billyc/git-lesson 2 Find the FORK button in the upper right, to create your own fork of this project 3 Copy the clone URL from the bar (use the HTTPS version)</p>
+<p>You’ve now got your own writable repository of someone else’s code: in this case, a small repo that I created for this class. Only I have write access to the original repo on GitHub, but you now have your own fork on GitHub which you can play with.</p>
+<p>To actually do anything with your fork, though, you still need to make a local clone of the code on your laptop.</p>
+<p><em>The Difference between FORK and CLONE</em></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span>
+$ <span class="kw">cd</span> Desktop
+$ <span class="kw">git</span> clone https://github.com/YOURNAME/git-lesson.git</code></pre></div>
+<p>Again, <code>git clone</code> creates a fresh local copy of a remote repository, which in this case is itself a fork of someone else’s repository.</p>
+<p>You’ll see that this repo is just one simple Python script, and a folder <code>contributors</code> with text files from each contributor. Now, add a new text file to the contributors folder with your name in it.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span> git-lesson/contributors
+$ <span class="kw">nano</span> myname.txt
+$ <span class="kw">(add</span> your full name to the first line of that file<span class="kw">)</span></code></pre></div>
+<p>and save, add, commit, and push your changes! <sub>~</sub> {.bash} $ git add me.txt $ git commit -m “added myself as a contributor to this project” $ git push <sub>~</sub></p>
+<p>You’ve added a new snapshot with the text file to your private fork, and pushed that change back up to GitHub.</p>
+<h4 id="pull-request">Pull Request</h4>
+<p>The final step in GitHub workflow is to let the original owner know that you’ve made some important changes that you think deserve to be merged into the main repository. You do this with what’s called a “pull request”</p>
+<ul>
+<li>Go back to GitHub and you’ll see your project now has a new commit.</li>
+<li>Click the “New Pull Request” button and follow the on-screen instructions to send the original repo owner a message along with your request that they “pull” your latest changes.</li>
+</ul>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="difference-between-init-and-clone"><span class="glyphicon glyphicon-pencil"></span>Difference between init and clone</h2>
+</div>
+<div class="panel-body">
+<p>What’s the difference?</p>
+</div>
+</section>
+<section class="challenge panel panel-success">
+<div class="panel-heading">
+<h2 id="difference-between-fork-and-clone"><span class="glyphicon glyphicon-pencil"></span>Difference between Fork and Clone</h2>
+</div>
+<div class="panel-body">
+<p>What’s the difference?</p>
+</div>
+</section>
+        </div>
+      </div>
+      </article>
+      <div class="footer">
+        <a class="label swc-blue-bg" href="http://software-carpentry.org">Software Carpentry</a>
+        <a class="label swc-blue-bg" href="https://github.com/swcarpentry/git-novice">Source</a>
+        <a class="label swc-blue-bg" href="mailto:admin@software-carpentry.org">Contact</a>
+        <a class="label swc-blue-bg" href="LICENSE.html">License</a>
+      </div>
+    </div>
+    <!-- Javascript placed at the end of the document so the pages load faster -->
+    <script src="http://software-carpentry.org/v5/js/jquery-1.9.1.min.js"></script>
+    <script src="css/bootstrap/bootstrap-js/bootstrap.js"></script>
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  </body>
+</html>

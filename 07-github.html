@@ -20,7 +20,7 @@
     <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
-          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+          <img alt="PSRC banner" src="http://psrc.github.io/itm-tutorial-2016/css/psrc-logo-new.png" />
         </a>
       </div>
       <article>
@@ -40,7 +40,20 @@
 </div>
 </section>
 <p>Version control really comes into its own when we begin to collaborate with other people. We already have most of the machinery we need to do this; the only thing missing is to copy changes from one repository to another.</p>
-<p>Systems like Git allow us to move work between any two repositories. In practice, though, it’s easiest to use one copy as a central hub, and to keep it on the web rather than on someone’s laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a> or <a href="http://gitlab.com/">GitLab</a> to hold those master copies; we’ll explore the pros and cons of this in the final section of this lesson.</p>
+<p>Git allows us to move work between any two repositories. In practice, though, it’s easiest to think of one copy as a central hub, and to keep it on the web rather than on someone’s laptop. Most programmers use hosting services like <a href="http://github.com">GitHub</a>, <a href="http://bitbucket.org">BitBucket</a> or <a href="http://gitlab.com/">GitLab</a> to hold those master copies; we’ll explore the pros and cons of this in the final section of this lesson.</p>
+<p>There are lots of different ways to use GitHub to share and collaborate on code. We will go through three typical examples.</p>
+<aside class="callout panel panel-info">
+<div class="panel-heading">
+<h2 id="what-is-github-and-how-is-it-different-from-git-itself"><span class="glyphicon glyphicon-pushpin"></span>What is GitHub, and how is it different from Git itself?</h2>
+</div>
+<div class="panel-body">
+<p><strong>Git</strong> is a system for storing and managing snapshots of your files. It runs locally on your computer, and has both command-line and GUI tools that help you to use it. Once you’ve installed Git on your computer, you can use it to manage any files want. Everything can stay local on your computer, so you don’t need to worry about whether your stuff is public, open-source, private, sensitive – it doesn’t matter. Git is just a way to help you manage your files. You can use Git to share files with others, too, but only if you want to use it that way.</p>
+<p><strong>GitHub</strong> is a popular website where you can upload a copy of your Git repositories. It is a Git repository “hosting service”, which offers all of the revision control and source code management functionality of Git, as well as adding its own features. You don’t need to use Github to get the benefits of Git, but you do have to be comfortable with Git before anything on the Github website will make sense.</p>
+<p><a href="http://github.com">GitHub</a> is run by the company Github Inc., and Github is free for open source files — and this means that <em>anything you upload to Github with a free account will be visible for everyone on the Internet to see and download</em>. Github does, of course, offer paid accounts too which allow private cloud storage for repositories that can’t be out in the open.</p>
+<p>There are many other websites which offer similar services, such as <a href="http://bitbucket.org">bitbucket</a> and <a href="http://www.gitlab.com">gitlab</a>.</p>
+</div>
+</aside>
+<h3 id="sharing-your-own-code-on-github">1. Sharing your own code on GitHub</h3>
 <p>Let’s start by sharing the changes we’ve made to our current project with the world. Log in to GitHub, then click on the icon in the top right corner to create a new repository called <code>planets</code>:</p>
 <div class="figure">
 <img src="fig/github-create-repo-01.png" alt="Creating a Repository on GitHub (Step 1)" />

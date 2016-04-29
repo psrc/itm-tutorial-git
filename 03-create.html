@@ -20,7 +20,7 @@
     <div class="container card">
       <div class="banner">
         <a href="http://software-carpentry.org" title="Software Carpentry">
-          <img alt="Software Carpentry banner" src="img/software-carpentry-banner.png" />
+          <img alt="PSRC banner" src="http://psrc.github.io/itm-tutorial-2016/css/psrc-logo-new.png" />
         </a>
       </div>
       <article>
@@ -38,8 +38,15 @@
 </ul>
 </div>
 </section>
-<p>Once Git is configured, we can start using it. Let’s create a directory for our work and then move into that directory:</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">mkdir</span> planets
+<p>Once Git is configured, we can start using it.</p>
+<p>There are two main ways to get a Git repository. One way is to simply initialize a new one from an existing directory, such as a new project or an existing project that’s new to source control. The second way is to “clone” one from a public Git repository, as you would do if you wanted a copy or wanted to work with someone on a project. We will cover the first of those here, and we’ll get to collaboration in a later section.</p>
+<h4 id="initializing-a-new-repository">Initializing a new repository</h4>
+<p>If you are starting from scratch with an empty directory, or if you have an existing folder of files that isn’t currently managed with Git, the first step is to tell Git that it’s time to turn that folder into a <strong>git repository</strong> — which means that for everything in that folder, Git can track changes, create snapshots, and keep a history of who changes what and when, from this point forward.</p>
+<p>Let’s create a new directory for our tutorial on our desktop, and then move into that directory.</p>
+<p>Open a terminal window and type:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">cd</span>
+$ <span class="kw">cd</span> Desktop
+$ <span class="kw">mkdir</span> planets
 $ <span class="kw">cd</span> planets</code></pre></div>
 <p>Then we tell Git to make <code>planets</code> a <a href="reference.html#repository">repository</a>—a place where Git can store versions of our files:</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> init</code></pre></div>
