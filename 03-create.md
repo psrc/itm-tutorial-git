@@ -12,17 +12,6 @@ Once Git is configured, we can start using it.
 
 There are two main ways to get a Git repository. One way is to simply initialize a new one from an existing directory, such as a new project or an existing project that's new to source control. The second way is to "clone" one from a public Git repository, as you would do if you wanted a copy or wanted to work with someone on a project. We will cover the first of those here, and we'll get to collaboration in a later section.
 
-> ## What is GitHub, and how is it different from Git itself? {.callout}
->
-> **Git** is a system for storing and managing snapshots of your files. It runs locally on your computer, and has both command-line and GUI tools that help you to use it. Once you've installed Git on your computer, you can use it to manage any files want. Everything can stay local on your computer, so you don't need to worry about whether your stuff is public, open-source, private, sensitive -- it doesn't matter. Git is just a way to help you manage your files. You can use Git to share files with others, too, but only if you want to use it that way.
->
->**GitHub** is a popular website where you can upload a copy of your Git repositories. It is a Git repository "hosting service", which offers all of the revision control and source code management  functionality of Git, as well as adding its own features. You don't need to use Github to get the benefits of Git, but you do have to be comfortable with Git before anything on the Github website will make sense.
->
->[GitHub](http://github.com) is run by the company Github Inc., and Github is free for open source files — and this means that *anything you upload to Github with a free account will be visible for everyone on the Internet to see and download*. Github does, of course, offer paid accounts too which allow private cloud storage for repositories that can't be out in the open.
->
->There are many other websites which offer similar services, such as [bitbucket](http://bitbucket.org) and [gitlab](http://www.gitlab.com).
-
-
 #### Initializing a new repository
 
 If you are starting from scratch with an empty directory, or if you have an existing folder of files that isn't currently managed with Git, the first step is to tell Git that it's time to turn that folder into a **git repository** — which means that for everything in that folder, Git can track changes, create snapshots, and keep a history of who changes what and when, from this point forward.

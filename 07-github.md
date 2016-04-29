@@ -14,10 +14,7 @@ when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
-Systems like Git allow us to move work between any two repositories.
-In practice,
-though,
-it's easiest to use one copy as a central hub,
+Git allows us to move work between any two repositories. In practice, though, it's easiest to think of one copy as a central hub,
 and to keep it on the web rather than on someone's laptop.
 Most programmers use hosting services like
 [GitHub](http://github.com),
@@ -25,6 +22,18 @@ Most programmers use hosting services like
 [GitLab](http://gitlab.com/)
 to hold those master copies;
 we'll explore the pros and cons of this in the final section of this lesson.
+
+> ## What is GitHub, and how is it different from Git itself? {.callout}
+>
+> **Git** is a system for storing and managing snapshots of your files. It runs locally on your computer, and has both command-line and GUI tools that help you to use it. Once you've installed Git on your computer, you can use it to manage any files want. Everything can stay local on your computer, so you don't need to worry about whether your stuff is public, open-source, private, sensitive -- it doesn't matter. Git is just a way to help you manage your files. You can use Git to share files with others, too, but only if you want to use it that way.
+>
+>**GitHub** is a popular website where you can upload a copy of your Git repositories. It is a Git repository "hosting service", which offers all of the revision control and source code management  functionality of Git, as well as adding its own features. You don't need to use Github to get the benefits of Git, but you do have to be comfortable with Git before anything on the Github website will make sense.
+>
+>[GitHub](http://github.com) is run by the company Github Inc., and Github is free for open source files — and this means that *anything you upload to Github with a free account will be visible for everyone on the Internet to see and download*. Github does, of course, offer paid accounts too which allow private cloud storage for repositories that can't be out in the open.
+>
+>There are many other websites which offer similar services, such as [bitbucket](http://bitbucket.org) and [gitlab](http://www.gitlab.com).
+
+### Using GitHub
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
@@ -187,9 +196,9 @@ though,
 this command would download them to our local repository.
 
 > ## GitHub GUI {.challenge}
-> 
+>
 > Browse to your `planets` repository on GitHub.
-> Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number). 
+> Under the Code tab, find and click on the text that says "XX commits" (where "XX" is some number).
 > Hover over, and click on, the three buttons to the right of each commit.
 > What information can you gather/explore from these buttons?
 > How would you get that same information in the shell?
