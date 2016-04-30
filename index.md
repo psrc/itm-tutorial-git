@@ -59,14 +59,14 @@ to be shared can and should be stored in a version control system.
 2.  [Setting Up Git](02-setup.html)
 3.  [Creating a Repository](03-create.html)
 4.  [Tracking Changes](04-changes.html)
-5.  [Ignoring Things](05-ignore.html)
-6.  [Sharing via GitHub](07-github.html)
-7.  [Working Together](08-collab.html)
-7.  [GitHub Workflow: Forks and Pull Requests](09-fork.html)
-8.  [Conflicts](10-conflict.html)
-9.  [Project Management with GitHub](10-github-management.html)
+6.  [GitHub](05-github.html)
+7.  [Working Together](06-collab.html)
+7.  [GitHub Workflow: Forks and Pull Requests](07-fork.html)
+9.  [Project Management with GitHub](08-github-management.html)
 21. [Appendix A - Exploring History](21-history.html)
-22. [Appendix B - Branching and Merging](22-branches.html)
+22. [Appendix B - Ignoring Things](22-ignore.html)
+23. [Appendix C - Branching and Merging](23-branches.html)
+24. [Appendix D - Resolving Conflicts](24-conflict.html)
 
 ## Other Resources
 
